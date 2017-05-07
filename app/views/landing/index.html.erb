@@ -157,7 +157,7 @@
 
 <!-- Page Contents -->
 <div class="pusher">
-  <div class="ui vertical segment">
+  <div id="masthead" class="ui vertical segment">
 
     <div class="ui container">
       <% if false %>
@@ -178,9 +178,9 @@
     </div>
 
     <div id="header" class="ui text container">
-      <div class="sub header">Theresa May says strong and stable a lot.</div>
+      <div class="ui small header">Theresa May only wants to say “strong and stable leadership” in this election.</div>
       <div class="ui huge header">
-        I want to donate
+        To get her to talk about the issues, I will donate
         <div id="donation-dropdown" class="ui inline dropdown">
           <div class="text">
             10p
@@ -207,19 +207,84 @@
             </div>
           </div>
         </div>
-        every time she says it.
+        to Labour candidates every time she does.
       </div>
+
       <div class="ui hidden divider"></div>
+
       <div class="ui stackable grid">
-        <div class="twelve wide column">
-          <div class="ui segment">
-            <p>Segment</p>
+        <div class="ten wide column">
+          <div class="ui basic segment">
+            <div class="ui center aligned grid">
+              <div class="one column">
+                <div class="ui fluid mini steps">
+                  <div id="step1-icon" class="active step">
+                    <div class="content">
+                      <div class="title">Pledge</div>
+                    </div>
+                  </div>
+                  <div id="step2-icon" class="step">
+                    <div class="content">
+                      <div class="title">Donate</div>
+                    </div>
+                  </div>
+                  <div id="step3-icon" class="step">
+                    <div class="content">
+                      <div class="title">Share</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="step1" class="ui grid">
+              <div class="one column">
+                <form class="ui form">
+                  <div class="field">
+                    <label>Name</label>
+                    <input type="text" name="name">
+                  </div>
+                  <div class="field">
+                    <label>Email</label>
+                    <input type="email" name="email">
+                  </div>
+                  <div class="field">
+                    <label>Postcode</label>
+                    <input type="text" name="postcode">
+                  </div>
+                  <button class="ui right floated primary button" type="submit">Next</button>
+                </form>
+              </div>
+            </div>
+            <div id="step2" class="ui grid hide">
+              <h1 class="ui header">Why Wait?</h1>
+              <h2 class="ui header">She's already said it 3 times today.</h2>
+              <button class="ui primary button" name="button">Donate 30p now.</button>
+              <button class="ui button" name="skip">Skip</button>
+              <button class="ui right floated primary button" name="next">Next</button>
+            </div>
+            <div id="step3" class="ui grid hide">
+              <button class="ui circular facebook icon button">
+                <i class="facebook icon"></i>
+              </button>
+              <button class="ui circular twitter icon button">
+                <i class="twitter icon"></i>
+              </button>
+              <button class="ui circular linkedin icon button">
+                <i class="linkedin icon"></i>
+              </button>
+              <button class="ui circular google plus icon button">
+                <i class="google plus icon"></i>
+              </button>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
 
   </div>
+
+  <% if false %>
 
   <div class="ui vertical footer segment">
     <div class="ui container">
@@ -249,6 +314,8 @@
       </div>
     </div>
   </div>
+
+  <% end %>
 </div>
 
 </body>

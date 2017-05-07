@@ -2,6 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  background-color: #0096db;
+}
+
 #header {
   margin-top: 5em;
 }
+
+.hide {
+  display: none !important;
+}
+
+// #masthead {
+//   background: image-url('theresa.jpg') no-repeat center center fixed;
+//   background-size: cover;
+// }
