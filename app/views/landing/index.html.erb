@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +21,7 @@
     }
 
     .masthead.segment {
-      min-height: 700px;
+      min-height: 600px;
       padding: 1em 0em;
     }
     .masthead .logo.item img {
@@ -30,9 +31,13 @@
       margin-left: 0.5em;
     }
     .masthead h1.ui.header {
-      margin-top: 1.5em;
+      margin-top: 1.7em;
       margin-bottom: 0em;
       font-size: 4em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
       font-weight: normal;
     }
 
@@ -88,6 +93,7 @@
       }
       .masthead h1.ui.header {
         font-size: 2em;
+        margin-top: 1.5em;
       }
       .masthead h2 {
         margin-top: 0.5em;
@@ -157,141 +163,176 @@
 
 <!-- Page Contents -->
 <div class="pusher">
-  <div id="masthead" class="ui vertical segment">
+  <div class="ui inverted vertical masthead center aligned segment">
 
-    <div class="ui container">
-      <% if false %>
-        <div class="ui large secondary pointing menu">
-          <a class="toc item">
-            <i class="sidebar icon"></i>
-          </a>
-          <a class="active item">Home</a>
-          <a class="item">Work</a>
-          <a class="item">Company</a>
-          <a class="item">Careers</a>
-          <div class="right item">
-            <a class="ui button">Log in</a>
-            <a class="ui button">Sign Up</a>
-          </div>
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        Theresa May only wants to say <strong>strong and stable</strong> in this election.
+      </h1>
+      <h2>
+      To get her to talk about the issues, I will donate
+      <div id="donation-dropdown" class="ui inline dropdown">
+        <div class="text">
+          10p
         </div>
-      <% end %>
-    </div>
-
-    <div id="header" class="ui text container">
-      <div class="ui small header">Theresa May only wants to say “strong and stable leadership” in this election.</div>
-      <div class="ui huge header">
-        To get her to talk about the issues, I will donate
-        <div id="donation-dropdown" class="ui inline dropdown">
-          <div class="text">
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item">
             10p
           </div>
-          <i class="dropdown icon"></i>
-          <div class="menu">
-            <div class="item">
-              10p
-            </div>
-            <div class="item">
-              30p
-            </div>
-            <div class="item">
-              50p
-            </div>
-            <div class="item">
-              80p
-            </div>
-            <div class="item">
-              £1
-            </div>
-            <div class="item">
-              £5
-            </div>
+          <div class="item">
+            30p
+          </div>
+          <div class="item">
+            50p
+          </div>
+          <div class="item">
+            80p
+          </div>
+          <div class="item">
+            £1
+          </div>
+          <div class="item">
+            £5
           </div>
         </div>
-        to Labour candidates every time she does.
       </div>
-
-      <div class="ui hidden divider"></div>
-
-      <div class="ui stackable grid">
-        <div class="ten wide column">
-          <div class="ui basic segment">
-            <div class="ui center aligned grid">
-              <div class="one column">
-                <div class="ui fluid mini steps">
-                  <div id="step1-icon" class="active step">
-                    <div class="content">
-                      <div class="title">Pledge</div>
-                    </div>
-                  </div>
-                  <div id="step2-icon" class="step">
-                    <div class="content">
-                      <div class="title">Donate</div>
-                    </div>
-                  </div>
-                  <div id="step3-icon" class="step">
-                    <div class="content">
-                      <div class="title">Share</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="step1" class="ui grid">
-              <div class="one column">
-                <form class="ui form">
-                  <div class="field">
-                    <label>Name</label>
-                    <input type="text" name="name">
-                  </div>
-                  <div class="field">
-                    <label>Email</label>
-                    <input type="email" name="email">
-                  </div>
-                  <div class="field">
-                    <label>Postcode</label>
-                    <input type="text" name="postcode">
-                  </div>
-                  <button class="ui right floated primary button" type="submit">Next</button>
-                </form>
-              </div>
-            </div>
-            <div id="step2" class="ui grid hide">
-              <h1 class="ui header">Why Wait?</h1>
-              <h2 class="ui header">She's already said it 3 times today.</h2>
-              <button class="ui primary button" name="button">Donate 30p now.</button>
-              <button class="ui button" name="skip">Skip</button>
-              <button class="ui right floated primary button" name="next">Next</button>
-            </div>
-            <div id="step3" class="ui grid hide">
-              <button class="ui circular facebook icon button">
-                <i class="facebook icon"></i>
-              </button>
-              <button class="ui circular twitter icon button">
-                <i class="twitter icon"></i>
-              </button>
-              <button class="ui circular linkedin icon button">
-                <i class="linkedin icon"></i>
-              </button>
-              <button class="ui circular google plus icon button">
-                <i class="google plus icon"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-      </div>
+      to Labour candidates every time she does.
+    </h2>
     </div>
 
   </div>
 
-  <% if false %>
+  <div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="eight wide column">
+          <div class="ui fluid mini steps">
+            <div id="step1-icon" class="active step">
+              <div class="content">
+                <div class="title">Pledge</div>
+              </div>
+            </div>
+            <div id="step2-icon" class="step">
+              <div class="content">
+                <div class="title">Donate</div>
+              </div>
+            </div>
+            <div id="step3-icon" class="step">
+              <div class="content">
+                <div class="title">Share</div>
+              </div>
+            </div>
+          </div>
+          <%= form_tag({controller: 'donors', action: 'create'}, method: 'post', class: 'ui equal width form') do %>
+            <div class="fields">
+              <div class="field">
+                <label>Name</label>
+                <input type="text" name="name">
+              </div>
+            </div>
+            <div class="fields">
+              <div class="field">
+                <label>Email</label>
+                <input type="email" name="email">
+              </div>
+            </div>
+            <div class="fields">
+              <div class="field">
+                <label>Postcode</label>
+                <input type="text" name="postcode">
+              </div>
+            </div>
+            <div class="fields">
+              <div class="field">
+                  <label>Pledge</label>
+                  <div class="ui selection dropdown">
+                      <input type="hidden" name="gender">
+                      <i class="dropdown icon"></i>
+                      <div class="default text">10p</div>
+                      <div class="menu">
+                          <div class="item" data-value="1">Male</div>
+                          <div class="item" data-value="0">Female</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="field">
+                <label>Max amount</label>
+                <input type="text" name="postcode">
+              </div>
+            </div>
+            <small>Don't worry, we'll always confirm everything with you first.</small>
+            <div class="ui hidden divider"></div>
+            <button class="ui right floated primary button" type="submit">Next</button>
+          <% end %>
+        </div>
+        <div class="eight wide center aligned column">
+          <h3 class="ui header">Today's Strong and Stable count</h3>
+          <div class="ui statistic">
+            <div class="value">
+              5
+            </div>
+            <div class="description">
+              Times
+            </div>
+          </div>
+        </div>
+      </div>
+      <% if false %>
+      <div class="row">
+        <div class="center aligned column">
+          <a class="ui huge button">Check Them Out</a>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 
-  <div class="ui vertical footer segment">
+
+  <div class="ui vertical stripe quote segment">
+    <div class="ui equal width stackable internally celled grid">
+      <div class="center aligned row">
+        <div class="column">
+          <h3>Report an offense</h3>
+          <p>Have we missed a strong-and-stable today?</p>
+          <div class="ui hidden divider"></div>
+          <div class="ui hidden divider"></div>
+          <a class="ui large button">Let us know</a>
+        </div>
+        <div class="column">
+          <h3>Our data</h3>
+          <p>
+            We sleuthing the internet on the daily and record our observations in a beautiful database.
+          </p>
+          <a class="ui large button">View it here</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% if false %>
+  <div class="ui vertical stripe segment">
+    <div class="ui center aligned text container">
+      <h3 class="ui header">Report an offense</h3>
+      <p>Have we missed a 'strong and stable' today?</p>
+      <a class="ui large button">Let us know</a>
+      <h4 class="ui horizontal header divider">
+        <a href="#">Our Data</a>
+      </h4>
+      <h3 class="ui header">Did We Tell You About Our Bananas?</h3>
+      <p>Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but its really true. It took years of gene splicing and combinatory DNA research, but our bananas can really dance.</p>
+      <a class="ui large button">I'm Still Quite Interested</a>
+    </div>
+  </div>
+  <% end %>
+
+
+  <div class="ui inverted vertical footer segment">
     <div class="ui container">
-      <div class="ui stackable divided equal height stackable grid">
+      <div class="ui stackable inverted divided equal height stackable grid">
         <div class="three wide column">
-          <h4 class="ui header">About</h4>
-          <div class="ui link list">
+          <h4 class="ui inverted header">About</h4>
+          <div class="ui inverted link list">
             <a href="#" class="item">Sitemap</a>
             <a href="#" class="item">Contact Us</a>
             <a href="#" class="item">Religious Ceremonies</a>
@@ -299,8 +340,8 @@
           </div>
         </div>
         <div class="three wide column">
-          <h4 class="ui header">Services</h4>
-          <div class="ui link list">
+          <h4 class="ui inverted header">Services</h4>
+          <div class="ui inverted link list">
             <a href="#" class="item">Banana Pre-Order</a>
             <a href="#" class="item">DNA FAQ</a>
             <a href="#" class="item">How To Access</a>
@@ -308,14 +349,12 @@
           </div>
         </div>
         <div class="seven wide column">
-          <h4 class="ui header">Footer Header</h4>
+          <h4 class="ui inverted header">Footer Header</h4>
           <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
         </div>
       </div>
     </div>
   </div>
-
-  <% end %>
 </div>
 
 </body>
