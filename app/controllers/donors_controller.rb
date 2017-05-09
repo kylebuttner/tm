@@ -69,6 +69,6 @@ class DonorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def donor_params
-      params.require(:donor).permit(:name, :email, :postcode, :pledge)
+      params.require(:donor).permit(:name, :email, :postcode, :pledge, :max)
     end
 end

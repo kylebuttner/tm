@@ -20,5 +20,10 @@
   <%= @donor.pledge %>
 </p>
 
+<p>
+  <strong>Max:</strong>
+  <%= @donor.max %>
+</p>
+
 <%= link_to 'Edit', edit_donor_path(@donor) %> |
 <%= link_to 'Back', donors_path %>
