@@ -5,7 +5,7 @@ $(document).ready(function () {
     });
 
     $('form#pledge').submit(function (e) {
-      e.preventDefault();
+      // e.preventDefault();
     })
 
     // Form step transitions
@@ -32,7 +32,7 @@ $(document).ready(function () {
     $('form#pledge').form({
       fields: {
         name: {
-          identifier: 'name',
+          identifier: 'donor[name]',
           rules: [
             {
               type: 'empty',
@@ -41,7 +41,7 @@ $(document).ready(function () {
           ]
         },
         email: {
-          identifier: 'email',
+          identifier: 'donor[email]',
           rules: [
             {
               type: 'email',
@@ -50,7 +50,7 @@ $(document).ready(function () {
           ]
         },
         postcode: {
-          identifier: 'postcode',
+          identifier: 'donor[postcode]',
           rules: [
             {
               type: 'regExp',
@@ -60,7 +60,7 @@ $(document).ready(function () {
           ]
         },
         pledge: {
-          identifier: 'pledge',
+          identifier: 'donor[pledge]',
           rules: [
             {
               type: 'empty',

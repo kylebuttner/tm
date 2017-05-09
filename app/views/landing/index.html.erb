@@ -183,32 +183,31 @@
           <div class="ui header">
             Pledge now
           </div>
-
-          <%= form_tag({controller: 'donors', action: 'create'}, method: 'post', class: 'ui equal width form', id: 'pledge') do %>
+          <%= form_for @donor, html: {class: 'ui equal width form', id: 'pledge'} do |f| %>
             <div class="ui error message"></div>
             <div class="fields">
               <div class="field">
-                <label>Name</label>
-                <input type="text" name="name">
+                <%=f.label :name %>
+                <%=f.text_field :name %>
               </div>
             </div>
             <div class="fields">
               <div class="field">
-                <label>Email</label>
-                <input type="email" name="email">
+                <%=f.label :email %>
+                <%=f.email_field :email %>
               </div>
             </div>
             <div class="fields">
               <div class="field">
-                <label>Postcode</label>
-                <input type="text" name="postcode">
+                <%=f.label :postcode %>
+                <%=f.text_field :postcode %>
               </div>
             </div>
             <div class="fields">
               <div class="field">
                   <label>Pledge</label>
                   <div class="ui selection dropdown">
-                      <input type="hidden" name="pledge" value="10p">
+                      <%= f.hidden_field :pledge, value: '10p' %>
                       <i class="dropdown icon"></i>
                       <div class="default text">10p</div>
                       <div class="menu">
@@ -226,7 +225,7 @@
                 <input type="text" name="max">
               </div>
             </div>
-            <small>Don't worry, we'll always confirm everything with you first.</small>
+            <small>Don't worry, we'll always confirm everything with you first before charging your card.</small>
             <div class="ui hidden divider"></div>
             <button class="ui right floated primary button" type="submit">Next</button>
           <% end %>
