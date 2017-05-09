@@ -170,34 +170,7 @@
         Theresa May only wants to say <strong>strong and stable</strong> in this election.
       </h1>
       <h2>
-      To get her to talk about the issues, I will donate
-      <div id="donation-dropdown" class="ui inline dropdown">
-        <div class="text">
-          10p
-        </div>
-        <i class="dropdown icon"></i>
-        <div class="menu">
-          <div class="item">
-            10p
-          </div>
-          <div class="item">
-            30p
-          </div>
-          <div class="item">
-            50p
-          </div>
-          <div class="item">
-            80p
-          </div>
-          <div class="item">
-            £1
-          </div>
-          <div class="item">
-            £5
-          </div>
-        </div>
-      </div>
-      to Labour candidates every time she does.
+      To get her to talk about the issues, make a pledge to donate to Labour candidates every time she does.
     </h2>
     </div>
 
@@ -207,24 +180,12 @@
     <div class="ui middle aligned stackable grid container">
       <div class="row">
         <div class="eight wide column">
-          <div class="ui fluid mini steps">
-            <div id="step1-icon" class="active step">
-              <div class="content">
-                <div class="title">Pledge</div>
-              </div>
-            </div>
-            <div id="step2-icon" class="step">
-              <div class="content">
-                <div class="title">Donate</div>
-              </div>
-            </div>
-            <div id="step3-icon" class="step">
-              <div class="content">
-                <div class="title">Share</div>
-              </div>
-            </div>
+          <div class="ui header">
+            Pledge now
           </div>
-          <%= form_tag({controller: 'donors', action: 'create'}, method: 'post', class: 'ui equal width form') do %>
+
+          <%= form_tag({controller: 'donors', action: 'create'}, method: 'post', class: 'ui equal width form', id: 'pledge') do %>
+            <div class="ui error message"></div>
             <div class="fields">
               <div class="field">
                 <label>Name</label>
@@ -247,18 +208,22 @@
               <div class="field">
                   <label>Pledge</label>
                   <div class="ui selection dropdown">
-                      <input type="hidden" name="gender">
+                      <input type="hidden" name="pledge" value="10p">
                       <i class="dropdown icon"></i>
                       <div class="default text">10p</div>
                       <div class="menu">
-                          <div class="item" data-value="1">Male</div>
-                          <div class="item" data-value="0">Female</div>
+                          <div class="item" data-value="10p">10p</div>
+                          <div class="item" data-value="20p">20p</div>
+                          <div class="item" data-value="20p">30p</div>
+                          <div class="item" data-value="20p">50p</div>
+                          <div class="item" data-value="20p">£1</div>
+                          <div class="item" data-value="20p">£2</div>
                       </div>
                   </div>
               </div>
               <div class="field">
-                <label>Max amount</label>
-                <input type="text" name="postcode">
+                <label>Max amount (in £s)</label>
+                <input type="text" name="max">
               </div>
             </div>
             <small>Don't worry, we'll always confirm everything with you first.</small>
