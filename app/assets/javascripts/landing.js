@@ -133,4 +133,10 @@ $(document).ready(function () {
       });
     });
 
+    $('.custom-donation-value').click(function () {
+      var value = $(this).val();
+      $('#donation-button-value').text(value/100)
+      $('#donation-form input[name="amount"]').val(value)
+    })
+
 })

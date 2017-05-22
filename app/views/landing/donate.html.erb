@@ -134,9 +134,6 @@
 
 <!-- Page Contents -->
 <div class="pusher">
-  <div class="ui inverted vertical masthead center aligned segment">
-
-  </div>
 
   <div class="ui vertical stripe segment">
     <div class="ui stackable grid container">
@@ -145,15 +142,71 @@
           <div class="ui text container">
             <h1 class="ui header">Why wait?</h1>
             <p>She's already used it 124 times since calling the election.</p>
-          <%= form_tag({controller: "landing", action: "charge"}, method: "post", class: "ui equal width form", id: "donation-form") do %>
-          <label for="card-element">
-            Credit or debit card
-          </label>
-          <div id="card-element"></div>
 
-          <!-- Used to display Element errors -->
-          <div id="card-errors" role="alert"></div>
-          <% end %>
+            <div class="ui statistics">
+              <div class="statistic">
+                <div class="value">
+                  124
+                </div>
+                <div class="label">
+                  Strong and stables
+                </div>
+              </div>
+              <div class="statistic">
+                <div class="value">
+                  x
+                </div>
+              </div>
+              <div class="statistic">
+                <div class="value">
+                  £1
+                </div>
+                <div class="label">
+                  Your pledge
+                </div>
+              </div>
+              <div class="statistic">
+                <div class="value">
+                  =
+                </div>
+              </div>
+              <div class="statistic">
+                <div class="value">
+                  £124
+                </div>
+                <div class="label">
+                  Donation
+                </div>
+              </div>
+            </div>
+
+            <div class="ui hidden divider"></div>
+            <small>Or choose another amount</small>
+            <div class="ui one column center aligned container">
+              <button class="ui basic primary button custom-donation-value" value="500">£5</button>
+              <button class="ui basic primary button custom-donation-value" value="1000">£10</button>
+              <button class="ui basic primary button custom-donation-value" value="1500">£15</button>
+              <button class="ui basic primary button custom-donation-value" value="2500">£25</button>
+              <button class="ui basic secondary button custom-donation-value" value="12400">£124</button>
+            </div>
+          <div class="ui hidden divider"></div>
+          <div class="ui centered grid">
+            <div class="ui ten wide column">
+              <div class="ui center aligned segment">
+                <%= form_tag({controller: "landing", action: "charge"}, method: "post", class: "ui equal width form", id: "donation-form") do %>
+                  <label for="card-element">
+                    Donate securely with your credit or debit card
+                  </label>
+                  <div id="card-element"></div>
+                  <input type="hidden" name="amount" value="12400">
+                  <!-- Used to display Element errors -->
+                  <div id="card-errors" role="alert"></div>
+                  <button class="ui primary button">Donate £<span id="donation-button-value">124</span></button>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         </div>
