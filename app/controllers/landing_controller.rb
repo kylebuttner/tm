@@ -38,18 +38,24 @@ class LandingController < ApplicationController
       puts "Param is: #{err[:param]}" if err[:param]
       puts "Message is: #{err[:message]}" if err[:message]
     rescue Stripe::RateLimitError => e
+      p 'rate limit'
     # Too many requests made to the API too quickly
     rescue Stripe::InvalidRequestError => e
+      p 'invalid request'
     # Invalid parameters were supplied to Stripe's API
     rescue Stripe::AuthenticationError => e
+      p 'auth error'
     # Authentication with Stripe's API failed
     # (maybe you changed API keys recently)
     rescue Stripe::APIConnectionError => e
+      p 'api connection'
     # Network communication with Stripe failed
     rescue Stripe::StripeError => e
+      p 'stripe'
     # Display a very generic error to the user, and maybe send
     # yourself an email
     rescue => e
+      p 'else'
     end
   end
 
