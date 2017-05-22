@@ -28,8 +28,9 @@ class DonorsController < ApplicationController
 
     respond_to do |format|
       if @donor.save
-        format.html { redirect_to @donor, notice: 'Donor was successfully created.' }
-        format.json { render :show, status: :created, location: @donor }
+        format.html { render :template => 'landing/donate' }
+        # format.html { redirect_to @donor, notice: 'Donor was successfully created.' }
+        # format.json { render :show, status: :created, location: @donor }
       else
         format.html { render 'landing/index' }
         format.json { render json: @donor.errors, status: :unprocessable_entity }

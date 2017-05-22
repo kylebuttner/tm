@@ -18,8 +18,8 @@ class LandingController < ApplicationController
       # Charge the user's card:
       charge = Stripe::Charge.create(
         :amount => amount,
-        :currency => "cad",
-        :description => "Example charge",
+        :currency => "gbp",
+        :description => "donation",
         :source => token,
       )
 
