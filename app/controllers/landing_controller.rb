@@ -9,6 +9,8 @@ class LandingController < ApplicationController
   end
 
   def charge
+    @donor = Donor.find_by(email: params[:email])
+
     begin
       Stripe.api_key = ENV["STRIPE_KEY"]
       # Get the payment token submitted by the form:
@@ -23,6 +25,8 @@ class LandingController < ApplicationController
         :source => token,
       )
 
+      @donor.donations.create(total: amount)
+      
       redirect_to share_path
     rescue Stripe::CardError => e
       # Since it's a decline, Stripe::CardError will be caught
