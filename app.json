@@ -1,0 +1,8 @@
+{
+  "name": "tmapp",
+  "env": {
+    "STRIPE_KEY": {
+      "required": true
+    }
+  }
+}
