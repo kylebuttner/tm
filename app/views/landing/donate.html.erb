@@ -142,12 +142,12 @@
           <div class="ui text container">
             <p>Thanks for your pledge <%= @donor.name %>.</p>
             <h1 class="ui header">Why wait?</h1>
-            <p>She's already used it 124 times since calling the election.</p>
+            <p>She's already used it <%= @total_offense_count %> times since calling the election.</p>
 
             <div class="ui statistics">
               <div class="statistic">
                 <div class="value">
-                  124
+                  <%= @total_offense_count %>
                 </div>
                 <div class="label">
                   Strong and stables
@@ -173,7 +173,7 @@
               </div>
               <div class="statistic">
                 <div class="value">
-                  <%= number_to_currency((@donor.pledge / 100) * 124, :unit => "£") %>
+                  <%= number_to_currency((@donor.pledge / 100) * @total_offense_count, :unit => "£") %>
                 </div>
                 <div class="label">
                   Donation
@@ -188,7 +188,7 @@
               <button class="ui basic primary button custom-donation-value" value="1000">£10</button>
               <button class="ui basic primary button custom-donation-value" value="1500">£15</button>
               <button class="ui basic primary button custom-donation-value" value="2500">£25</button>
-              <button class="ui basic secondary button custom-donation-value" value="<%= @donor.pledge * 124 %>"><%= number_to_currency((@donor.pledge / 100) * 124, :unit => "£") %></button>
+              <button class="ui basic secondary button custom-donation-value" value="<%= @donor.pledge * @total_offense_count %>"><%= number_to_currency((@donor.pledge / 100) * @total_offense_count, :unit => "£") %></button>
             </div>
           <div class="ui hidden divider"></div>
           <div class="ui centered grid">
@@ -200,11 +200,11 @@
                   </label>
                   <div class="ui hidden divider"></div>
                   <div id="card-element"></div>
-                  <input type="hidden" name="amount" value="<%= (@donor.pledge * 124).to_i %>">
+                  <input type="hidden" name="amount" value="<%= (@donor.pledge * @total_offense_count).to_i %>">
                   <!-- Used to display Element errors -->
                   <div id="card-errors" role="alert"></div>
                   <div class="ui hidden divider"></div>
-                  <button class="ui primary button">Donate <span id="donation-button-value"><%= number_to_currency((@donor.pledge / 100) * 124, :unit => "£") %></span></button>
+                  <button class="ui primary button">Donate <span id="donation-button-value"><%= number_to_currency((@donor.pledge / 100) * @total_offense_count, :unit => "£") %></span></button>
                 <% end %>
               </div>
             </div>
