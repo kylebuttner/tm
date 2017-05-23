@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Donor</th>
       <th>Total</th>
       <th colspan="3"></th>
     </tr>
@@ -13,6 +14,7 @@
   <tbody>
     <% @donations.each do |donation| %>
       <tr>
+        <td><%= donation.donor.email %></td>
         <td><%= donation.total %></td>
         <td><%= link_to 'Show', donation %></td>
         <td><%= link_to 'Edit', edit_donation_path(donation) %></td>
