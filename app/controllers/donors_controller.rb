@@ -28,8 +28,7 @@ class DonorsController < ApplicationController
 
     respond_to do |format|
       if @donor.save
-        @total_offense_count = Offense.sum(:count)
-        format.html { render :template => 'landing/donate' }
+        format.html { redirect_to donate_path(email: @donor.email) }
         # format.html { redirect_to @donor, notice: 'Donor was successfully created.' }
         # format.json { render :show, status: :created, location: @donor }
       else

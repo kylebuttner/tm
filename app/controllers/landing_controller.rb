@@ -13,7 +13,8 @@ class LandingController < ApplicationController
   end
 
   def donate
-
+    @donor = Donor.find_by(email: params[:email])
+    @total_offense_count = Offense.sum(:count)
   end
 
   def charge
