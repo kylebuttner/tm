@@ -1,5 +1,5 @@
 class DonorsController < ApplicationController
-  before_action :authenticate_admin!
+  before_action :authenticate_admin!, except: [:create]
 
   before_action :set_donor, only: [:show, :edit, :update, :destroy]
 
