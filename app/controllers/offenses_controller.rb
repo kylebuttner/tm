@@ -1,4 +1,5 @@
 class OffensesController < ApplicationController
+  before_action :authenticate_admin!
   before_action :set_offense, only: [:show, :edit, :update, :destroy]
 
   # GET /offenses
