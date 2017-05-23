@@ -2,6 +2,13 @@ class LandingController < ApplicationController
   layout false
   def index
     @donor = Donor.new
+    @feed_items = []
+
+    @feed_items << Donation.last(10)
+    @feed_items << Donor.last(10)
+    @feed_items.flatten!
+    @feed_items = @feed_items.sort_by { |item| item.updated_at }
+    @feed_items.reverse!
   end
 
   def donate

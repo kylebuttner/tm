@@ -235,123 +235,37 @@
             Recent Activity
           </div>
           <div class="ui feed">
-            <div class="event">
-              <div class="label">
-                <i class="payment icon"></i>
-              </div>
-              <div class="content">
-                <div class="summary">
-                  Someone donated £4.10
-                  <div class="date">
-                    5 minutes ago
+            <% @feed_items.each do |item| %>
+              <% if item.class.name == "Donor" %>
+                <div class="event">
+                  <div class="label">
+                    <i class="write icon"></i>
+                  </div>
+                  <div class="content">
+                    <div class="summary">
+                      Someone made a <%= number_to_currency(item.pledge / 100, :unit => "£") %> pledge
+                      <div class="date">
+                        <%= time_ago_in_words(item.updated_at) %>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="event">
-              <div class="label">
-                <i class="payment icon"></i>
-              </div>
-              <div class="content">
-                <div class="summary">
-                  Someone donated £21.30
-                  <div class="date">
-                    8 minutes ago
+              <% elsif item.class.name == "Donation" %>
+                <div class="event">
+                  <div class="label">
+                    <i class="payment icon"></i>
+                  </div>
+                  <div class="content">
+                    <div class="summary">
+                      Someone donated <%= number_to_currency(item.total / 100, :unit => "£") %>
+                      <div class="date">
+                        <%= time_ago_in_words(item.updated_at) %>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="event">
-              <div class="label">
-                <i class="share alternate icon"></i>
-              </div>
-              <div class="content">
-                <div class="summary">
-                  Someone shared this page
-                  <div class="date">
-                    15 minutes ago
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="event">
-              <div class="label">
-                <i class="write icon"></i>
-              </div>
-              <div class="content">
-                <div class="summary">
-                  Someone made a 30p pledge
-                  <div class="date">
-                    19 minutes ago
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="event">
-              <div class="label">
-                <i class="write icon"></i>
-              </div>
-              <div class="content">
-                <div class="summary">
-                  Someone made a £1 pledge
-                  <div class="date">
-                    22 minutes ago
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="event">
-              <div class="label">
-                <i class="share alternate icon"></i>
-              </div>
-              <div class="content">
-                <div class="summary">
-                  Someone shared this page
-                  <div class="date">
-                    24 minutes ago
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="event">
-              <div class="label">
-                <i class="payment icon"></i>
-              </div>
-              <div class="content">
-                <div class="summary">
-                  Someone donated £5.70
-                  <div class="date">
-                    36 minutes ago
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="event">
-              <div class="label">
-                <i class="share alternate icon"></i>
-              </div>
-              <div class="content">
-                <div class="summary">
-                  Someone shared this page
-                  <div class="date">
-                    45 minutes ago
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="event">
-              <div class="label">
-                <i class="payment icon"></i>
-              </div>
-              <div class="content">
-                <div class="summary">
-                  Someone donated £2.30
-                  <div class="date">
-                    1 hour ago
-                  </div>
-                </div>
-              </div>
-            </div>
+              <% end %>
+            <% end %>
           </div>
         </div>
       </div>
