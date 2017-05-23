@@ -26,8 +26,8 @@ class LandingController < ApplicationController
       )
 
       @donor.donations.create(total: amount)
-      
-      redirect_to share_path
+
+      redirect_to root_path(success: true)
     rescue Stripe::CardError => e
       # Since it's a decline, Stripe::CardError will be caught
       body = e.json_body
