@@ -138,7 +138,7 @@
   <div class="ui vertical stripe segment">
     <div class="ui stackable grid container">
       <div class="centered row">
-        <div class="sixteen wide column">
+        <div class="fourteen wide column">
           <p>Thanks for your pledge <%= @donor.name %>.</p>
           <h1 class="ui header">Why wait?</h1>
           <p>She's already used it <%= @total_offense_count %> times since calling the election.</p>
@@ -193,7 +193,7 @@
           </div>
         <div class="ui hidden divider"></div>
         <div class="ui centered grid">
-          <div class="ui ten wide column">
+          <div class="ui sixteen wide mobile twelve wide computer column">
             <div class="ui center aligned segment">
               <%= form_tag({controller: "landing", action: "charge"}, method: "post", class: "ui equal width form", id: "donation-form") do %>
                 <label for="card-element">
