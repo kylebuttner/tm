@@ -42,7 +42,7 @@
     }
 
     .ui.vertical.stripe {
-      padding: 8em 0em;
+      padding: 4em 0em;
     }
     .ui.vertical.stripe h3 {
       font-size: 2em;
@@ -88,9 +88,9 @@
       .secondary.pointing.menu .toc.item {
         display: block;
       }
-      .masthead.segment {
+      /*.masthead.segment {
         min-height: 350px;
-      }
+      }*/
       .masthead h1.ui.header {
         font-size: 2em;
         margin-top: 1.5em;
@@ -134,16 +134,19 @@
 
 <!-- Page Contents -->
 <div class="pusher">
-
+  <div class="ui inverted vertical masthead center aligned segment" style="background-color: rgba(228, 0, 59, 0.9);">
+  </div>
   <div class="ui vertical stripe segment">
     <div class="ui stackable grid container">
       <div class="centered row">
         <div class="fourteen wide column">
-          <p>Thanks for your pledge <%= @donor.name %>.</p>
-          <h1 class="ui header">Why wait?</h1>
-          <p>She's already used it <%= @total_offense_count %> times since calling the election.</p>
+          <div class="ui text container">
+            <p>Thanks for your pledge <%= @donor.name %>.</p>
+            <h1 class="ui header">Why wait?</h1>
+            <p>She's already used it <%= @total_offense_count %> times since calling the election.</p>
 
-          <div class="ui statistics">
+          <div class="ui hidden divider"></div>
+          <div class="ui small statistics">
             <div class="statistic">
               <div class="value">
                 <%= @total_offense_count %>
@@ -179,17 +182,19 @@
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="ui hidden divider"></div>
-          <small>Or choose another amount</small>
-          <div class="ui hidden divider"></div>
+          <div class="ui text container">
+            <small>Or choose another amount</small>
+            <div class="ui hidden divider"></div>
 
-          <div class="ui one column center aligned container">
-            <button class="ui basic primary button custom-donation-value" value="500">£5</button>
-            <button class="ui basic primary button custom-donation-value" value="1000">£10</button>
-            <button class="ui basic primary button custom-donation-value" value="1500">£15</button>
-            <button class="ui basic primary button custom-donation-value" value="2500">£25</button>
-            <button class="ui basic secondary button custom-donation-value" value="<%= @donor.pledge * @total_offense_count %>"><%= number_to_currency((@donor.pledge / 100) * @total_offense_count, :unit => "£") %></button>
+            <div class="ui one column center aligned container">
+              <button class="ui basic primary button custom-donation-value" value="500">£5</button>
+              <button class="ui basic primary button custom-donation-value" value="1000">£10</button>
+              <button class="ui basic primary button custom-donation-value" value="1500">£15</button>
+              <button class="ui basic primary button custom-donation-value" value="2500">£25</button>
+              <button class="ui basic secondary button custom-donation-value" value="<%= @donor.pledge * @total_offense_count %>"><%= number_to_currency((@donor.pledge / 100) * @total_offense_count, :unit => "£") %></button>
+            </div>
           </div>
         <div class="ui hidden divider"></div>
         <div class="ui centered grid">
