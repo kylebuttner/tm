@@ -171,21 +171,21 @@
 
 <!-- Page Contents -->
 <div class="pusher">
-  <div class="ui inverted vertical masthead center aligned segment" style="background-color: rgba(228, 0, 59, 0.9);">
-
-    <div class="ui text container">
-      <h1 class="ui inverted header">
-        Theresa May only wants to say <strong>strong and stable</strong> in this election.
-      </h1>
-      <h2>
-      To get her to talk about the issues, make a pledge to donate to Labour candidates every time she does.
-    </h2>
+  <div id="masthead" class="ui inverted vertical masthead center aligned segment" style="background-color: rgba(228, 0, 59, 0.9);">
+    <div id="layer">
+      <div class="ui text container">
+        <h1 class="ui inverted header">
+          Theresa May only wants to say <strong>strong and stable</strong> in this election.
+        </h1>
+        <h2>
+        To get her to talk about the issues, make a pledge to donate to Labour candidates every time she does.
+      </h2>
+      </div>
     </div>
-
   </div>
 
   <div class="ui vertical stripe segment">
-    <div class="ui stackable grid container">
+    <div class="ui stackable centered grid container">
       <div class="row">
         <div class="eight wide column">
           <div class="ui header">
@@ -253,7 +253,7 @@
                     <div class="summary">
                       Someone made a <%= number_to_currency(item.pledge / 100, :unit => "£") %> pledge
                       <div class="date">
-                        <%= time_ago_in_words(item.updated_at) %>
+                        <%= time_ago_in_words(item.updated_at) %> ago
                       </div>
                     </div>
                   </div>
@@ -267,7 +267,7 @@
                     <div class="summary">
                       Someone donated <%= number_to_currency(item.total / 100, :unit => "£") %>
                       <div class="date">
-                        <%= time_ago_in_words(item.updated_at) %>
+                        <%= time_ago_in_words(item.updated_at) %> ago
                       </div>
                     </div>
                   </div>

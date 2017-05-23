@@ -30,7 +30,7 @@ class DonorsController < ApplicationController
 
     respond_to do |format|
       if @donor.save
-        format.html { redirect_to donate_path(email: @donor.email) }
+        format.html { redirect_to donate_path(token: @donor.token) }
         # format.html { redirect_to @donor, notice: 'Donor was successfully created.' }
         # format.json { render :show, status: :created, location: @donor }
       else
