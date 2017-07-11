@@ -21,7 +21,7 @@
     }
 
     .masthead.segment {
-      min-height: 600px;
+      min-height: 400px;
       padding: 1em 0em;
     }
     .masthead .logo.item img {
@@ -31,12 +31,12 @@
       margin-left: 0.5em;
     }
     .masthead h1.ui.header {
-      margin-top: 1.7em;
-      margin-bottom: 0em;
       font-size: 4em;
       font-weight: normal;
     }
     .masthead h2 {
+      margin-top: 3em;
+      margin-bottom: 0em;
       font-size: 1.7em;
       font-weight: normal;
     }
@@ -171,61 +171,31 @@
 
 <!-- Page Contents -->
 <div class="pusher">
-  <%if false %>
+  <%if true %>
     <div id="masthead" class="ui inverted vertical masthead center aligned segment" style="background-color: rgba(228, 0, 59, 0.9);">
       <div id="layer">
         <div class="ui text container">
-          <h1 class="ui inverted header">
-            Theresa May only wants to say <strong>strong and stable</strong> in this election.
-          </h1>
           <h2>
-          To get her to talk about the issues, make a pledge to donate to Labour candidates every time she does.
-        </h2>
+            Momentum activists are trying to deselect Labour MPs.
+          </h2>
+          <h1 class="ui inverted header">
+            Tell them to respect the vote and back Labour.
+          </h1>
         </div>
       </div>
     </div>
   <% end %>
 
   <div class="ui vertical stripe segment">
-    <div class="ui stackable centered grid container">
+    <div class="ui stackable centered relaxed grid container">
       <div class="row">
         <div class="eight wide column">
-          <div class="ui header">
-            Recent Activity
-          </div>
-          <div class="ui feed">
-            <% @feed_items.each do |item| %>
-              <% if item.class.name == "Donor" %>
-                <div class="event">
-                  <div class="label">
-                    <i class="write icon"></i>
-                  </div>
-                  <div class="content">
-                    <div class="summary">
-                      Someone made a <%= number_to_currency(item.pledge / 100, :unit => "£") %> pledge
-                      <div class="date">
-                        <%= time_ago_in_words(item.updated_at) %> ago
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              <% elsif item.class.name == "Donation" %>
-                <div class="event">
-                  <div class="label">
-                    <i class="payment icon"></i>
-                  </div>
-                  <div class="content">
-                    <div class="summary">
-                      Someone donated <%= number_to_currency(item.total / 100, :unit => "£") %>
-                      <div class="date">
-                        <%= time_ago_in_words(item.updated_at) %> ago
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
+          <h2 class="ui header">
+            Momentum activists are trying to deselect Labour MPs.
+          </h2>
+          <h1>
+            Tell them to respect the vote and back Labour.
+          </h1>
         </div>
         <div class="eight wide column">
           <div class="ui header">
