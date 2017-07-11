@@ -171,22 +171,62 @@
 
 <!-- Page Contents -->
 <div class="pusher">
-  <div id="masthead" class="ui inverted vertical masthead center aligned segment" style="background-color: rgba(228, 0, 59, 0.9);">
-    <div id="layer">
-      <div class="ui text container">
-        <h1 class="ui inverted header">
-          Theresa May only wants to say <strong>strong and stable</strong> in this election.
-        </h1>
-        <h2>
-        To get her to talk about the issues, make a pledge to donate to Labour candidates every time she does.
-      </h2>
+  <%if false %>
+    <div id="masthead" class="ui inverted vertical masthead center aligned segment" style="background-color: rgba(228, 0, 59, 0.9);">
+      <div id="layer">
+        <div class="ui text container">
+          <h1 class="ui inverted header">
+            Theresa May only wants to say <strong>strong and stable</strong> in this election.
+          </h1>
+          <h2>
+          To get her to talk about the issues, make a pledge to donate to Labour candidates every time she does.
+        </h2>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 
   <div class="ui vertical stripe segment">
     <div class="ui stackable centered grid container">
       <div class="row">
+        <div class="eight wide column">
+          <div class="ui header">
+            Recent Activity
+          </div>
+          <div class="ui feed">
+            <% @feed_items.each do |item| %>
+              <% if item.class.name == "Donor" %>
+                <div class="event">
+                  <div class="label">
+                    <i class="write icon"></i>
+                  </div>
+                  <div class="content">
+                    <div class="summary">
+                      Someone made a <%= number_to_currency(item.pledge / 100, :unit => "£") %> pledge
+                      <div class="date">
+                        <%= time_ago_in_words(item.updated_at) %> ago
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% elsif item.class.name == "Donation" %>
+                <div class="event">
+                  <div class="label">
+                    <i class="payment icon"></i>
+                  </div>
+                  <div class="content">
+                    <div class="summary">
+                      Someone donated <%= number_to_currency(item.total / 100, :unit => "£") %>
+                      <div class="date">
+                        <%= time_ago_in_words(item.updated_at) %> ago
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
         <div class="eight wide column">
           <div class="ui header">
             Pledge now
@@ -237,44 +277,6 @@
             <div class="ui hidden divider"></div>
             <button class="ui right floated primary button" type="submit">Next</button>
           <% end %>
-        </div>
-        <div class="eight wide column">
-          <div class="ui header">
-            Recent Activity
-          </div>
-          <div class="ui feed">
-            <% @feed_items.each do |item| %>
-              <% if item.class.name == "Donor" %>
-                <div class="event">
-                  <div class="label">
-                    <i class="write icon"></i>
-                  </div>
-                  <div class="content">
-                    <div class="summary">
-                      Someone made a <%= number_to_currency(item.pledge / 100, :unit => "£") %> pledge
-                      <div class="date">
-                        <%= time_ago_in_words(item.updated_at) %> ago
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              <% elsif item.class.name == "Donation" %>
-                <div class="event">
-                  <div class="label">
-                    <i class="payment icon"></i>
-                  </div>
-                  <div class="content">
-                    <div class="summary">
-                      Someone donated <%= number_to_currency(item.total / 100, :unit => "£") %>
-                      <div class="date">
-                        <%= time_ago_in_words(item.updated_at) %> ago
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
         </div>
       </div>
       <% if false %>
