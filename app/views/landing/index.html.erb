@@ -13,8 +13,27 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,700" rel="stylesheet">
 
   <style type="text/css">
+
+    /* FONT */
+    body {
+      font-family: "Source Sans Pro", sans-serif !important;
+    }
+
+    p {
+      font-family: "Source Sans Pro", sans-serif !important;
+      font-weight: 300 !important;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: "Source Sans Pro", sans-serif !important;
+    }
+
+    .ui.header {
+      font-family: "Source Sans Pro", sans-serif !important;
+    }
 
     .hidden.menu {
       display: none;
@@ -89,14 +108,14 @@
         display: block;
       }
       .masthead.segment {
-        min-height: 350px;
+        min-height: 325px;
       }
       .masthead h1.ui.header {
         font-size: 2em;
-        margin-top: 1.5em;
+        margin-top: 0.5em;
       }
       .masthead h2 {
-        margin-top: 0.5em;
+        margin-top: 3em;
         font-size: 1.5em;
       }
     }
@@ -190,17 +209,20 @@
     <div class="ui stackable centered relaxed grid container">
       <div class="row">
         <div class="eight wide column">
-          <h2 class="ui header">
-            Momentum activists are trying to deselect Labour MPs.
-          </h2>
-          <h1>
-            Tell them to respect the vote and back Labour.
-          </h1>
+          <h3>Momentum activists are trying to deselect democratically elected Labour MPs to try and increase their power.</h3>
+
+          <p>They think that every day they get away with bullying Labour MPs it makes that MP weaker.</p>
+
+          <p>We need to work together and show it unites the Labour movement against them. We need to create a fund for Labour MPs being targeted by Momentum to allow them to resist the threats.</p>
+
+          <h2 style="font-style: italic;">Jeremy Corbyn’s Labour has the Tories on the ropes. We can't let Momentum distract our MPs with threats.</h2>
+
         </div>
         <div class="eight wide column">
           <div class="ui header">
             Pledge now
           </div>
+          <p>Donate a small amount to the fighting fund every day that Momentum founder and leader Jon Lansman doesn’t publicly rule out these bullying tactics.</p>
           <%= form_for @donor, html: {class: 'ui equal width form', id: 'pledge'} do |f| %>
             <div class="ui error message"></div>
             <div class="fields">
